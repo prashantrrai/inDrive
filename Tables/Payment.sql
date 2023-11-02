@@ -1,0 +1,9 @@
+CREATE TABLE Payment (
+	PaymentId INT IDENTITY PRIMARY KEY,
+	PayeeName VARCHAR(50) NOT NULL,
+	MerchantName VARCHAR(50) NOT NULL,
+	PaymentMethod VARCHAR(50) NOT NULL,
+	PaymentStatus BIT,
+	Amount INT,
+	TransactionId UNIQUEIDENTIFIER DEFAULT(NEWID())
+)

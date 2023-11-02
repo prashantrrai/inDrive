@@ -1,0 +1,13 @@
+CREATE TABLE Subscription (
+	SubscriptionId INT IDENTITY PRIMARY KEY,
+	SubscriptionPlan VARCHAR(20) NOT NULL,
+	Amount INT NOT NULL,
+	PromoCodeId INT FOREIGN KEY REFERENCES Promocode(PromoCodeId),
+	StartDate DATETIME2 NOT NULL,
+	ExpiryDate DATETIME2 NOT NULL,
+	CreatedBy VARCHAR(36),
+	CreatedDate DATETIME2 DEFAULT GETDATE(),
+	ModifyBy VARCHAR(36),
+	ModifyDate DATETIME2 DEFAULT GETDATE(),
+	isActive BIT DEFAULT(1)
+)

@@ -1,0 +1,7 @@
+CREATE TABLE Promocode (
+	PromoCodeId INT IDENTITY PRIMARY KEY,
+	ValidFrom DATETIME2 NOT NULL,
+	ExpiryDate DATETIME2 NOT NULL,
+	[Discount %] INT NOT NULL,
+	ReferredBy VARCHAR(50)
+)

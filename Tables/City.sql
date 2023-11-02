@@ -1,0 +1,17 @@
+CREATE TABLE City(
+	CityId INT IDENTITY PRIMARY KEY,
+	CityName VARCHAR(50) NOT NULL,
+	Coordinates NVARCHAR(MAX),
+	--StateId INT FOREIGN KEY REFERENCES State(StateId),
+	--GeofenceId INT FOREIGN KEY REFERENCES Geofence(GeofenceId),
+	CreatedBy NVARCHAR(255),  
+    CreatedAt DATETIME2 DEFAULT GETDATE(),
+    ModifiedBy NVARCHAR(255),
+    ModifiedAt DATETIME2 DEFAULT GETDATE(),
+    isActive BIT DEFAULT 0
+)
+
+SELECT * FROM City;
+
+
+DROP TABLE City;
