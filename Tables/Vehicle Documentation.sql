@@ -1,7 +1,7 @@
 CREATE TABLE [Vehicle Documentation](
 	VehicleRegId UNIQUEIDENTIFIER PRIMARY KEY,
 	BuyerName VARCHAR(50) NOT NULL,
-	--CityId INT FOREIGN KEY REFERENCES City(CityId),
+	CityId INT FOREIGN KEY REFERENCES City(CityId),
 	VehicleModel VARCHAR(50) NOT NULL,
 	NumberPlate VARCHAR(30) NOT NULL,
 	PUC VARCHAR(30) NOT NULL,
@@ -13,8 +13,9 @@ CREATE TABLE [Vehicle Documentation](
 	SeatingCapacity INT NOT NULL,
 	Color VARCHAR(30) NOT NULL,
 	Manufacturer VARCHAR(50) NOT NULL,
-	--VehicleId INT FOREIGN KEY REFERENCES Vehicle(VehicleId),
+	VehicleId INT FOREIGN KEY REFERENCES Vehicle(VehicleId),
 )
 
+SELECT * FROM [Vehicle Documentation]
 
 DROP TABLE [Vehicle Documentation];

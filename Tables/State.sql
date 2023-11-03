@@ -3,10 +3,10 @@ CREATE TABLE State(
 	StateName VARCHAR(50) NOT NULL,
 	Abbreviation VARCHAR(20) NOT NULL,
 	StateCapital VARCHAR(50) NOT NULL,
-	--CountryId INT FOREIGN KEY REFERENCES Country(CountryId),
-	CreatedBy NVARCHAR(255),  
+	CountryId INT FOREIGN KEY REFERENCES Country(CountryId),
+	CreatedBy NVARCHAR(50),  
     CreatedAt DATETIME2 DEFAULT GETDATE(),
-    ModifiedBy NVARCHAR(255),
+    ModifiedBy NVARCHAR(50),
     ModifiedAt DATETIME2 DEFAULT GETDATE(),
     isActive BIT DEFAULT 0
 )

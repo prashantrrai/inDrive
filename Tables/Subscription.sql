@@ -11,3 +11,5 @@ CREATE TABLE Subscription (
 	ModifyDate DATETIME2 DEFAULT GETDATE(),
 	isActive BIT DEFAULT(1)
 )
+
+SELECT * FROM Subscription

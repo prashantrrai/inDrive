@@ -4,5 +4,5 @@ CREATE TABLE [Booking Cancellation](
 	CancellationCharges INT ,
 	Reason VARCHAR(100),
 	CreatedBy VARCHAR(36),
-	CreatedDate DATETIME2 DEFAULT GETDATE()
+	CreatedAt DATETIME2 DEFAULT GETDATE()
 )

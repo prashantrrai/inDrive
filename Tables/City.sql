@@ -2,14 +2,21 @@ CREATE TABLE City(
 	CityId INT IDENTITY PRIMARY KEY,
 	CityName VARCHAR(50) NOT NULL,
 	Coordinates NVARCHAR(MAX),
-	--StateId INT FOREIGN KEY REFERENCES State(StateId),
-	--GeofenceId INT FOREIGN KEY REFERENCES Geofence(GeofenceId),
-	CreatedBy NVARCHAR(255),  
+	StateId INT FOREIGN KEY REFERENCES State(StateId),
+	GeofenceId INT FOREIGN KEY REFERENCES Geofence(GeofenceId),
+	CreatedBy NVARCHAR(50),  
     CreatedAt DATETIME2 DEFAULT GETDATE(),
-    ModifiedBy NVARCHAR(255),
+    ModifiedBy NVARCHAR(50),
     ModifiedAt DATETIME2 DEFAULT GETDATE(),
     isActive BIT DEFAULT 0
 )
+
+ALTER TABLE City
+ADD GeofenceId INT
+
+ALTER TABLE City
+ADD CONSTRAINT FK_City_GeofenceId FOREIGN KEY (GeofenceId) REFERENCES Geofence(GeofenceId)
+
 
 SELECT * FROM City;
 

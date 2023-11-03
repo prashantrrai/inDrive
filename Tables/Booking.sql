@@ -11,3 +11,5 @@ CREATE TABLE Booking(
 	CreatedAt DATETIME2 DEFAULT GETDATE()
 
 )
+
+SELECT * FROM Booking

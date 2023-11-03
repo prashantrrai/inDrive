@@ -5,3 +5,5 @@ CREATE TABLE Promocode (
 	[Discount %] INT NOT NULL,
 	ReferredBy VARCHAR(50)
 )
+
+SELECT * FROM Promocode

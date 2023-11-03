@@ -1,6 +1,6 @@
 CREATE TABLE [Driver Payroll](
 	DriverPayrollId INT IDENTITY PRIMARY KEY,
-	--DriverId INT FOREIGN KEY REFERENCES Driver(DriverId),
+	DriverId INT FOREIGN KEY REFERENCES Driver(DriverId),
 	CTC INT ,
 	InHand INT ,
 	Bonus INT ,
@@ -8,5 +8,6 @@ CREATE TABLE [Driver Payroll](
 	Insurance INT,
 	PF INT,
 	ESOPS INT,
-	--IncentiveId INT FOREIGN KEY REFERENCES Incentive(IncentiveId),
+	IncentiveId INT FOREIGN KEY REFERENCES Incentive(IncentiveId),
 )
+SELECT * FROM [Driver Payroll]

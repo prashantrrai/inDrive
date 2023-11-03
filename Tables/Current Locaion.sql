@@ -1,9 +1,9 @@
 CREATE TABLE [Current Location](
-	LocationId INT IDENTITY NOT NULL,
+	LocationId INT IDENTITY PRIMARY KEY,
 	LocationName VARCHAR(50) NOT NULL,
-	--CityId INT FOREIGN KEY REFERENCES City(CityId),
+	CityId INT FOREIGN KEY REFERENCES City(CityId),
 	Coordinates NVARCHAR(MAX),
-	--GeofenceId INT FOREIGN KEY REFERENCES Geofence(GeofenceId),
+	GeofenceId INT FOREIGN KEY REFERENCES Geofence(GeofenceId),
 	CreatedBy NVARCHAR(255),  
     CreatedAt DATETIME2 DEFAULT GETDATE(),
     ModifiedBy NVARCHAR(255),

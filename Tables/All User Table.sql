@@ -1,0 +1,10 @@
+CREATE TABLE [All User Table](
+	UID UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+	AccessId VARCHAR(10) FOREIGN KEY REFERENCES [Access Control](AccessId),
+	AdminId INT FOREIGN KEY REFERENCES Admin(AdminId),
+	PassengerId INT FOREIGN KEY REFERENCES Passenger(PassengerId),
+	DriverId INT FOREIGN KEY REFERENCES Driver(DriverId),
+	TechnicianId INT FOREIGN KEY REFERENCES Technician(TechnicianId)
+)
+
+DROP TABLE [All User Table];

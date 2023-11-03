@@ -7,9 +7,9 @@ CREATE TABLE Country(
 	TimeZone VARCHAR(50),
 	CountryCapital VARCHAR(50) NOT NULL,
 	Flag NVARCHAR(MAX) NOT NULL,
-    CreatedBy NVARCHAR(255),  
+    CreatedBy VARCHAR(50),  
     CreatedAt DATETIME2 DEFAULT GETDATE(),
-    ModifiedBy NVARCHAR(255),
+    ModifiedBy VARCHAR(50),
     ModifiedAt DATETIME2 DEFAULT GETDATE(),
     isActive BIT DEFAULT 0
 )
