@@ -14,6 +14,7 @@ CREATE TABLE Geofence(
     isActive BIT DEFAULT 0
 )
 
+
 SELECT * FROM Geofence;
 
 DROP TABLE Geofence;

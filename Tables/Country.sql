@@ -14,6 +14,12 @@ CREATE TABLE Country(
     isActive BIT DEFAULT 0
 )
 
+
+INSERT INTO Country (CountryName, Abbreviation, Currency, DialingCode, TimeZone, CountryCapital, Flag)
+VALUES
+('India', 'IND', 'Indian Rupee', 91, 'UTC+05:30', 'New Delhi', 'https://www.worldometers.info/img/flags/in-flag.gif')
+
+
 SELECT * FROM Country;
 
 DROP TABLE Country;

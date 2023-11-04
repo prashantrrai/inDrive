@@ -9,3 +9,18 @@ CREATE TABLE [Session Management](
 )
 
 SELECT * FROM [Session Management]
+
+INSERT INTO [Session Management](PassengerId)
+VALUES
+
+ALTER TABLE [Session Management]
+ALTER COLUMN StartTime DATETIME2
+
+
+ALTER TABLE ChildTable
+DROP CONSTRAINT ForeignKeyConstraintName;
+
+
+
+
+DROP TABLE [Session Management]
