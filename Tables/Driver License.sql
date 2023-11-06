@@ -11,4 +11,8 @@ CREATE TABLE [Driver License](
 	VehicleAuthType VARCHAR(50) NOT NULL
 )
 
+INSERT INTO [Driver License](LicenseId, ApplicantName, SWD, DateOfIssue, DateOfExpiry, DOB, BloodGroup, CityId, VehicleAuthType)
+VALUES
+(NEWID(), 'Dinesh Parmar', 'Mahesh Parmar', GETDATE(), GETDATE(), '2001-05-01', 'O+', 41, 'LMV + MCWG')
+
 SELECT * FROM [Driver License]

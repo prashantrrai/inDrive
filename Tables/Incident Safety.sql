@@ -9,6 +9,10 @@ CREATE TABLE Incident (
 	Witnesses VARCHAR(255) NOT NULL
 )
 
+INSERT INTO Incident(Title, Description, BookingId, LocationId, Compensation, IncidentStatus, Witnesses)
+VALUES
+('Road Accident', 'Road Accident at Sola Highway at 6:00 PM', 1, 1, 20000, 0, 'Yash Vidja')
+
 
 SELECT * FROM Incident
 /*

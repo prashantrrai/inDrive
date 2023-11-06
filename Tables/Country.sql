@@ -19,6 +19,15 @@ INSERT INTO Country (CountryName, Abbreviation, Currency, DialingCode, TimeZone,
 VALUES
 ('India', 'IND', 'Indian Rupee', 91, 'UTC+05:30', 'New Delhi', 'https://www.worldometers.info/img/flags/in-flag.gif')
 
+UPDATE Country
+SET CreatedBy = 'ADMN001'
+
+UPDATE Country
+SET ModifiedBy = 'ADMN001'
+
+UPDATE Country
+SET isActive = 1
+WHERE CountryName = 'India'
 
 SELECT * FROM Country;
 

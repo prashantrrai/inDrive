@@ -13,6 +13,21 @@ CREATE TABLE Ride (
 	NearestArray NVARCHAR(MAX)
 );
 
+
+ALTER TABLE Ride
+ADD CONSTRAINT def_StartTime_Ride
+DEFAULT GETDATE() FOR StartTime,
+DEFAULT GETDATE() FOR EndTime;
+
+DELETE FROM Ride
+DBCC CHECKIDENT ('Ride', RESEED, 0)
+
+INSERT INTO Ride(StartLocation, EndLocation, WAYPoints, TotalDistance, TotalTime, RideStatus)
+VALUES
+('Ahmedabad', 'Junagadh', 'Rajkot', 275, 8, 0)
+
+SELECT * FROM Ride
+
 /*
 const Status = {
   PENDING: 0,

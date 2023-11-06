@@ -1,4 +1,4 @@
-CREATE PROCEDURE SP_Registration
+CREATE PROCEDURE SP_Admin_Registration
 	@Email VARCHAR(255),
 	@Password VARCHAR(32),
 	@CnfPassword VARCHAR(32),
@@ -39,7 +39,7 @@ BEGIN
 END
 
 
-EXEC SP_Registration @Email = 'prashantrai@gmail.com', @Password = 'admin123', @CnfPassword = 'admin123', @Phone = 7359030960;
+EXEC SP_Admin_Registration @Email = 'prashantrai@gmail.com', @Password = 'admin123', @CnfPassword = 'admin123', @Phone = 7359030960;
 
 
-DROP PROCEDURE SP_Registration
+DROP PROCEDURE SP_Admin_Registration

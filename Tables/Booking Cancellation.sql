@@ -6,3 +6,10 @@ CREATE TABLE [Booking Cancellation](
 	CreatedBy VARCHAR(36),
 	CreatedAt DATETIME2 DEFAULT GETDATE()
 )
+
+INSERT INTO [Booking Cancellation] (BookingId, CancellationCharges, Reason, CreatedBy)
+VALUES
+(1, 39, 'Due to late coming of cab', 'PSGR002')
+
+
+SELECT * FROM [Booking Cancellation]

@@ -12,4 +12,19 @@ CREATE TABLE Booking(
 
 )
 
+ALTER TABLE Booking
+DROP COLUMN EstimateTime;
+
+
+ALTER TABLE Booking
+ADD EstimateTime INT;
+
+
+INSERT INTO Booking(PassengerId, DriverId, VehicleId, RideId, EstimateTime, EstimateFare, PromoCodeId, PaymentId)
+VALUES
+(1, 1, 1, 1, 8, 160, 1, 1)
+
+DELETE FROM Booking
+
+
 SELECT * FROM Booking

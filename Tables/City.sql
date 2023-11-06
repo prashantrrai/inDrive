@@ -28,12 +28,18 @@ WITH
 GO
 
 
-SELECT * FROM City;
 
 TRUNCATE TABLE City;
 DROP TABLE City;
 
 UPDATE City
-SET CreatedBy = NULL;
+SET CreatedBy = 'ADMN001';
 
+UPDATE City
+SET ModifiedBy = 'ADMN001';
 
+UPDATE City
+SET isActive =1
+WHERE StateId =7
+
+SELECT * FROM City;

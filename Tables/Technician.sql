@@ -10,8 +10,8 @@ CREATE TABLE Technician(
 	Rating DECIMAL(2, 1) CHECK (Rating >= 1.0 AND Rating <= 5.0),
 	Assigned BIT DEFAULT 0,
 	TechnicianProfile NVARCHAR(MAX) DEFAULT('https://campussafetyconference.com/wp-content/uploads/2020/08/iStock-476085198.jpg'),
-	TechnicianPayrollId INT FOREIGN KEY REFERENCES TechnicianPayroll(TechnicianPayrollId),
-	IncentiveId INT FOREIGN KEY REFERENCES Incentive(IncentiveId),
+	--TechnicianPayrollId INT FOREIGN KEY REFERENCES TechnicianPayroll(TechnicianPayrollId),
+	--IncentiveId INT FOREIGN KEY REFERENCES Incentive(IncentiveId),
 	CreatedBy VARCHAR(36),
 	CreatedDate DATETIME2 DEFAULT GETDATE(),
 	ModifyBy VARCHAR(36),
@@ -24,6 +24,11 @@ ADD IncentiveId INT
 
 ALTER TABLE Technician
 ADD CONSTRAINT FK_Technician_IncentiveId FOREIGN KEY (IncentiveId) REFERENCES Incentive(IncentiveId)
+
+INSERT INTO Technician(TechnicianName, TechnicianEmail, Password, CnfPassword, TechnicianPhone, CityId, AccessId, Rating, TechnicianPayrollId, IncentiveId, CreatedBy, ModifyBy)
+VALUES 
+('Bhavin Seth', 'bhavinseth@gmail.com', 'bhavin_234', 'bhavin_234', '9909807896', 8, 'TECH004', 4.3, 1, 1, 'ADMN001', 'TECH004' )
+
 
 SELECT * FROM Technician;
 

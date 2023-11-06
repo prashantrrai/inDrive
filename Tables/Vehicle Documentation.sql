@@ -16,6 +16,10 @@ CREATE TABLE [Vehicle Documentation](
 	VehicleId INT FOREIGN KEY REFERENCES Vehicle(VehicleId),
 )
 
+INSERT INTO [Vehicle Documentation] (VehicleRegId, BuyerName, CityId, VehicleModel, NumberPlate, PUC, InsuranceNumber, RegDate, ExpiryDate, Type, Fuel, SeatingCapacity, Color, Manufacturer, VehicleId)
+VALUES
+(NEWID(), 'Shashank Gohel', 8, 'Honda Ciaz 8000', 'AH01K2199', 'NU8779HKDB', 'GJAH67867868', GETDATE(), GETDATE(), '4 Wheeler', 'Diesel', 4, 'Snow White', 'Parin Motors', 1 );
+
 SELECT * FROM [Vehicle Documentation]
 
 DROP TABLE [Vehicle Documentation];

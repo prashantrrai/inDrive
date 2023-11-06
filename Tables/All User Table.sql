@@ -7,4 +7,14 @@ CREATE TABLE [All User Table](
 	TechnicianId INT FOREIGN KEY REFERENCES Technician(TechnicianId)
 )
 
+INSERT INTO [All User Table](AccessId, AdminId, PassengerId, DriverId, TechnicianId)
+VALUES 
+('ADMN001', 1, NULL, NULL, NULL),
+('PSGR002', NULL, 1, NULL, NULL),
+('DRVR003', NULL, NULL, 1, NULL),
+('TECH004', NULL, NULL, NULL, 1)
+
+SELECT * FROM [All User Table]
+
+
 DROP TABLE [All User Table];

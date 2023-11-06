@@ -17,7 +17,7 @@ CREATE TABLE Admin(
 )
 
 ALTER TABLE Admin
-ALTER COLUMN ModifyBy UNIQUEIDENTIFIER;
+ADD ModifyBy VARCHAR(10);
 
 
 
@@ -28,8 +28,24 @@ ADD CONSTRAINT FK_CreatedBy FOREIGN KEY (CreatedBy) REFERENCES [All User Table](
 ALTER TABLE Admin
 ADD CONSTRAINT FK_ModifyBy FOREIGN KEY (ModifyBy) REFERENCES [All User Table](UID);
 
+ALTER TABLE Admin
+DROP CONSTRAINT FK_ModifyBy
 
 DROP TABLE Admin;
 
+
+INSERT INTO Admin (AdminName, AdminEmail, Password, CnfPassword, AdminPhone, CityId, AccessId, CreatedBy, ModifyBy )
+VALUES ('Prashant Rai', 'admin@gmail.com', 'admin@123', 'admin@123', '9841232569', 8, 'ADMN001', 'ADMN001', 'ADMN001');
+
 SELECT * FROM Admin;
 
+DELETE FROM Admin WHERE AdminId = 3;
+DBCC CHECKIDENT ('Admin', RESEED, 0);
+
+
+--joins to find admins country, state, city
+SELECT Admin.AdminName, City.CityName, State.StateName, Country.CountryName
+FROM Admin
+JOIN City ON Admin.CityId = City.CityId
+JOIN State ON City.StateId  = State.StateId
+JOIN  Country ON State.CountryId = Country.CountryId

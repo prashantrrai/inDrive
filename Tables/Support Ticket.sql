@@ -11,4 +11,8 @@ CREATE TABLE [Support Ticket] (
 	isActive BIT DEFAULT(1)
 )
 
+INSERT INTO [Support Ticket](TechnicianId, PassengerId, DriverId, BookingId, CreatedBy, ModifyBy)
+VALUES
+(1, 1, 1, 1, 'PSGR002', 'PSGR002')
+
 SELECT * FROM [Support Ticket]

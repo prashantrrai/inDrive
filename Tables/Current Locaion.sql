@@ -12,7 +12,28 @@ CREATE TABLE [Current Location](
 )
 
 
+ALTER TABLE [Current Location]
+ALTER COLUMN CreatedBy VARCHAR(50)
+
+ALTER TABLE [Current Location]
+ALTER COLUMN ModifiedBy VARCHAR(50)
+
+ALTER TABLE  [Current Location]
+ADD CONSTRAINT Def_CreatedBy_CurrentLocation
+DEFAULT 'ADMN001' FOR CreatedBy,
+DEFAULT 'ADMN001' FOR ModifiedBy;
+
+INSERT INTO [Current Location](LocationName, CityId, GeofenceId)
+VALUES
+('Usmanpura', 8, 1)
+
+UPDATE [Current Location]
+SET LocationName = 'Navrangpura', isActive =1
+WHERE LocationId =1
+
 SELECT * FROM [Current Location];
+
+
 
 
 DROP TABLE [Current Location];

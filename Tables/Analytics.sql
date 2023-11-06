@@ -1,5 +1,5 @@
 CREATE TABLE Analytics(
-	EventId INT IDENTITY PRIMARY KEY,
+	AnalyticsId INT IDENTITY PRIMARY KEY,
 	BookingId INT FOREIGN KEY REFERENCES Booking(BookingId),
 	RideHistoryId INT FOREIGN KEY REFERENCES [Ride History](RideHistoryId),
 	IncidentId INT FOREIGN KEY REFERENCES Incident(IncidentId),
@@ -15,6 +15,17 @@ CREATE TABLE Analytics(
 	ResolutionId INT FOREIGN KEY REFERENCES [Ticket Resolution](ResolutionId),
 	PricingId INT FOREIGN KEY REFERENCES [Vehicle Pricing](PricingId),
 	FeedbackId INT FOREIGN KEY REFERENCES Feedback(FeedbackId),
+	CreatedBy VARCHAR(50), 
+	CreatedAt DATETIME2 DEFAULT GETDATE(),
+	ModifiedBy VARCHAR(50), 
+	ModifiedAt DATETIME2 DEFAULT GETDATE(),
+	isActive BIT DEFAULT 1
 )
+INSERT INTO Analytics( BookingId, RideHistoryId, IncidentId, PassengerId, DriverId, VehicleId,
+RideId, TechnicianId, IncentiveId, DriverPayrollId, TechnicianPayrollId, SessionId, ResolutionId, PricingId, FeedbackId, CreatedBy, ModifiedBy)
+VALUES
+(1, 1, 1, 1, 1, 1, 1, 1, 1 ,1 ,1 ,1, 1 ,1 ,1 , 'ADMN001', 'ADMN001')
 
 SELECT * FROM Analytics
+
+DROP TABLE Analytics

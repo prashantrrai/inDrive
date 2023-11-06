@@ -7,3 +7,9 @@ CREATE TABLE Payment (
 	Amount INT,
 	TransactionId UNIQUEIDENTIFIER DEFAULT(NEWID())
 )
+
+INSERT INTO Payment(PayeeName, MerchantName, PaymentMethod, PaymentStatus, Amount)
+VALUES
+('Subham Shah', 'Paytm', 'UPI', 1, 160)
+
+SELECT * FROM Payment
