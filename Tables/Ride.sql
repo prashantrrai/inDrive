@@ -15,16 +15,28 @@ CREATE TABLE Ride (
 
 
 ALTER TABLE Ride
+ALTER COLUMN AssigningTime DATETIME2
+
+ADD CONSTRAINT DF_AssigningTime DEFAULT GETDATE() FOR AssigningTime;
+
+ALTER COLUMN EndTime DATETIME2
+ALTER COLUMN AssigningTime DATETIME2
+
+
+
+ALTER TABLE Ride
 ADD CONSTRAINT def_StartTime_Ride
 DEFAULT GETDATE() FOR StartTime,
 DEFAULT GETDATE() FOR EndTime;
 
 DELETE FROM Ride
+WHERE RideId BETWEEN 2 AND 33;
+
 DBCC CHECKIDENT ('Ride', RESEED, 0)
 
 INSERT INTO Ride(StartLocation, EndLocation, WAYPoints, TotalDistance, TotalTime, RideStatus)
 VALUES
-('Ahmedabad', 'Junagadh', 'Rajkot', 275, 8, 0)
+('Rajkot', 'Morbi', 'Tankara', 70, 2, 0)
 
 SELECT * FROM Ride
 

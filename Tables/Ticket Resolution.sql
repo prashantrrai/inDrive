@@ -16,3 +16,16 @@ VALUES
 (1, 'PSGR002', 'PSGR002', 'Thanks for helping')
 
 SELECT * FROM [Ticket Resolution]
+
+ALTER TABLE [Ticket Resolution]
+ADD Status INT CHECK (Status IN (1, 2, 3, 4)) DEFAULT 1;
+
+ALTER TABLE [Ticket Resolution]
+DROP COLUMN Status
+
+--status =  {
+--	1: Open Ticket,
+--	2: On going Ticket,
+--	3: Resolved Ticket,
+--	4: Closed Ticket
+--}

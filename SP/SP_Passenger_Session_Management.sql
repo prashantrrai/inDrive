@@ -3,7 +3,8 @@ CREATE PROCEDURE SP_Passenger_Session_Management
 	@Password VARCHAR(32)
 AS
 BEGIN
-	DECLARE @isLogin BIT = 1  , @failcount INT = 0
+	DECLARE @isLogin BIT = 1  , @CurrentFailedAttempts  INT = (SELECT FailedLoginAttempts FROM Passenger)
+
 
 	IF @EMAIL IS NULL OR @Email NOT LIKE '%__%@%___%.%__%'
 		BEGIN
@@ -11,7 +12,7 @@ BEGIN
 			SET @isLogin = 0
 
 			UPDATE Passenger
-			SET FailedLoginAttempts = @failcount + 1
+			SET FailedLoginAttempts = @CurrentFailedAttempts + 1
 
 			RAISERROR('Login Failed', 10,2)
 
@@ -24,7 +25,7 @@ BEGIN
 			SET @isLogin = 0
 
 			UPDATE Passenger
-			SET FailedLoginAttempts = @failcount + 1
+			SET FailedLoginAttempts = @CurrentFailedAttempts + 1
 			RAISERROR('Login Failed', 10,4)
 
 			RETURN;
@@ -36,7 +37,7 @@ BEGIN
 			SET @isLogin = 0
 
 			UPDATE Passenger
-			SET FailedLoginAttempts = @failcount + 1
+			SET FailedLoginAttempts = @CurrentFailedAttempts + 1
 			RAISERROR('Login Failed', 10,6)
 
 			RETURN;
@@ -48,7 +49,7 @@ BEGIN
 			SET @isLogin = 0
 
 			UPDATE Passenger
-			SET FailedLoginAttempts = @failcount + 1
+			SET FailedLoginAttempts = @CurrentFailedAttempts + 1
 			RAISERROR('Login Failed', 10,8)
 
 			RETURN;
@@ -70,8 +71,17 @@ END
 
 
 
-EXEC SP_Passenger_Session_Management @Email = 'subhm@gmail.com', @Password = 'subham123'
+EXEC SP_Passenger_Session_Management @Email = 'subham@gmail.com', @Password = 'subham123'
 
 
 DROP PROC SP_Passenger_Session_Management
 
+
+
+--CREATE FUNCTION [Failed Login Attempts] ( @CurrentFailedAttempts INT = (SELECT FailedLoginAttempts FROM Passenger) )
+--RETURNS INT
+--AS
+--BEGIN
+--	RETURN  UPDATE Passenger
+--			SET FailedLoginAttempts = @CurrentFailedAttempts + 1
+--END

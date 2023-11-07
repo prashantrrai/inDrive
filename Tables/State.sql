@@ -22,6 +22,16 @@ WITH
 GO
 
 
+UPDATE State
+SET CreatedBy = 'ADMN001'
+
+UPDATE State
+SET ModifiedBy = 'ADMN001'
+
+UPDATE State
+SET  isActive = 1
+WHERE StateId = 7
+
 SELECT * FROM State;
 
 DROP TABLE State;

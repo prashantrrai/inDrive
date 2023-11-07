@@ -33,4 +33,4 @@ END
 EXEC SP_Admin_Login @Email = 'admin@gmail.com', @Password = 'admin@123'
 
 
-DROP PROC SP_Login
+DROP PROC SP_Admin_Login;

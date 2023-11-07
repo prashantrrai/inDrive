@@ -42,4 +42,16 @@ UPDATE City
 SET isActive =1
 WHERE StateId =7
 
+ALTER TABLE City
+ADD CONSTRAINT default_createdBy
+DEFAULT 'ADMN001' FOR CreatedBy,
+DEFAULT 'ADMN001' FOR ModifiedBy;
+
+INSERT INTO City(CityName, StateId)
+VALUES
+	('Rajkot', 7)
+
+UPDATE City SET isActive = 1 WHERE CityName = 'Rajkot'
+
+
 SELECT * FROM City;
